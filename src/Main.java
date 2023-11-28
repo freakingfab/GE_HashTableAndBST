@@ -19,5 +19,9 @@ public class Main {
         }
 
         wordMap.getFrequency();
+
+        wordMap.remove("avoidable");
+        System.out.println("Frequency after removing avoidable as key");
+        wordMap.getFrequency();
     }
 }

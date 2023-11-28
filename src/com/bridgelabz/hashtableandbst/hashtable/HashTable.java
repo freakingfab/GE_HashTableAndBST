@@ -68,6 +68,23 @@ public class HashTable<K,V>{
     }
 
     /*
+        @desc: remove the key-value pair in map
+        @param: key and value
+        @return: void
+     */
+    public void remove(K key){
+        int index = getBucketIndex(key);
+        LinkedList<MyMapNode<K,V>> bucket = bucketArray[index];
+
+        for (MyMapNode<K,V> node: bucket) {
+            if (node.key.equals(key)) {
+                bucket.remove(node);
+                return;
+            }
+        }
+    }
+
+    /*
         @desc: print the map
         @params: none
         @return: void
