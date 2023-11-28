@@ -28,7 +28,7 @@ public class HashTable<K,V>{
      */
     public int getBucketIndex(K key){
         int hashCode = key.hashCode();
-        return (hashCode%numBuckets);
+        return Math.abs(hashCode%numBuckets);
     }
 
     /*
