@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="892ff5f3-2d88-4a53-8d47-6374ee79b2bb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/bridgelabz/hashtableandbst/bst/BinarySearchTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/bridgelabz/hashtableandbst/bst/MyBinaryNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/bridgelabz/hashtableandbst/hashtable/HashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bridgelabz/hashtableandbst/hashtable/HashTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +38,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "UC2__for__paragraph",
+    "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -67,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1701191564350</updated>
-      <workItem from="1701191565522" duration="2270000" />
+      <workItem from="1701191565522" duration="5132000" />
     </task>
     <servers />
   </component>
