@@ -1,5 +1,8 @@
+import com.bridgelabz.hashtableandbst.bst.MyBinaryNode;
 import com.bridgelabz.hashtableandbst.hashtable.HashTable;
 import com.bridgelabz.hashtableandbst.bst.BinarySearchTree;
+import com.bridgelabz.hashtableandbst.hashtable.MyMapNode;
+
 public class Main {
     public static void main(String[] args) {
         /*
@@ -35,7 +38,30 @@ public class Main {
         bst.addNode(56);
         bst.addNode(30);
         bst.addNode(70);
-        System.out.println("Binary Search Tree (In-Order):");
+        bst.addNode(22);
+        bst.addNode(40);
+        bst.addNode(60);
+        bst.addNode(95);
+        bst.addNode(65);
+        bst.addNode(63);
+        bst.addNode(67);
+        System.out.println("Original Binary Search Tree (In-Order):");
         bst.displayInOrder();
+        System.out.println();
+        System.out.println("Height of Tree: " + bst.height());
+        System.out.println("Size of Tree: " + bst.size());
+
+        BinarySearchTree<Integer> subTree = new BinarySearchTree<Integer>();
+        bst.addNode(11);
+        bst.addNode(3);
+        bst.addNode(16);
+
+        bst.addSubtree(subTree.getRoot());
+        System.out.println("After Binary Search Tree (In-Order):");
+        bst.displayInOrder();
+        System.out.println();
+        System.out.println("Height of Tree: " + bst.height());
+        System.out.println("Size of Tree: " + bst.size());
+
 }
 }
