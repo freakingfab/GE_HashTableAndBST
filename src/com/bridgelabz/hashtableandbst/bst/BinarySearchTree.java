@@ -47,34 +47,17 @@ public class BinarySearchTree<K extends Comparable<K>>{
         }
         return root;
     }
-    /*
-        @desc: calls for reurcisve height function
-        @params: none:
-        @return: int
-     */
-    public int height(){
-        return heightRecursive(root);
-    }
 
     /*
         @desc: give height for tree(recursive)
         @params: root node
         @return: int
      */
-    private int heightRecursive(MyBinaryNode<K> root){
+    public int height(MyBinaryNode<K> root){
         if(root == null){
             return 0;
         }
-        return 1 + Math.max(heightRecursive(root.left),heightRecursive(root.right));
-    }
-
-    /*
-        @desc: calls for reurcisve size function
-        @params: none:
-        @return: int
-     */
-    public int size(){
-        return sizeRecursive(root);
+        return 1 + Math.max(height(root.left),height(root.right));
     }
 
     /*
@@ -82,37 +65,20 @@ public class BinarySearchTree<K extends Comparable<K>>{
         @params: root node
         @return: int
      */
-    private int sizeRecursive(MyBinaryNode<K> root){
+    public int size(MyBinaryNode<K> root){
         if(root == null){
             return 0;
         }
-        return 1 + sizeRecursive(root.left) + sizeRecursive(root.right);
+        return 1 + size(root.left) + size(root.right);
     }
 
-    /*
-        @desc: calls for recurive display
-        @params: none
-        @return: void
-     */
-    public void displayInOrder(){
-        displayInOrderRec(root);
-    }
-
-    /*
-        @desc: calls for recursive add subtree function
-        @params: subtree root
-        @return: void
-     */
-    public void addSubtree(MyBinaryNode<K> subtreeRoot) {
-        addSubtreeRec(root, subtreeRoot);
-    }
 
     /*
         @desc: adds subtree to main bst
         @params: main root, subtree root
         @return: void
      */
-    private void addSubtreeRec(MyBinaryNode<K> root, MyBinaryNode<K> subtreeRoot) {
+    public void addSubtree(MyBinaryNode<K> root, MyBinaryNode<K> subtreeRoot) {
         if (subtreeRoot == null) {
             return;
         }
@@ -121,8 +87,26 @@ public class BinarySearchTree<K extends Comparable<K>>{
         addNode(subtreeRoot.key);
 
         // Recursively add left and right subtrees
-        addSubtreeRec(root, subtreeRoot.left);
-        addSubtreeRec(root, subtreeRoot.right);
+        addSubtree(root, subtreeRoot.left);
+        addSubtree(root, subtreeRoot.right);
+    }
+
+    /*
+        @desc: serach for key in bst
+        @params: root of bst, key
+        @return boolean
+     */
+    public boolean search(MyBinaryNode<K> root, K key) {
+        if (root == null) {
+            return false;
+        }
+        if (key.compareTo(root.key) == 0) {
+            return true; // Key found
+        } else if (key.compareTo(root.key) < 0) {
+            return search(root.left, key);
+        } else {
+            return search(root.right, key);
+        }
     }
 
     /*
@@ -130,11 +114,11 @@ public class BinarySearchTree<K extends Comparable<K>>{
         @params: root node
         @return: void
      */
-    private void displayInOrderRec(MyBinaryNode<K> root) {
+    public void displayInOrder(MyBinaryNode<K> root) {
         if (root != null) {
-            displayInOrderRec(root.left);
+            displayInOrder(root.left);
             System.out.print(root.key + " ");
-            displayInOrderRec(root.right);
+            displayInOrder(root.right);
         }
     }
 }

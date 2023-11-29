@@ -46,22 +46,29 @@ public class Main {
         bst.addNode(63);
         bst.addNode(67);
         System.out.println("Original Binary Search Tree (In-Order):");
-        bst.displayInOrder();
+        bst.displayInOrder(bst.getRoot());
         System.out.println();
-        System.out.println("Height of Tree: " + bst.height());
-        System.out.println("Size of Tree: " + bst.size());
+        System.out.println("Height of Tree: " + bst.height(bst.getRoot()));
+        System.out.println("Size of Tree: " + bst.size(bst.getRoot()));
 
         BinarySearchTree<Integer> subTree = new BinarySearchTree<Integer>();
-        bst.addNode(11);
-        bst.addNode(3);
-        bst.addNode(16);
+        subTree.addNode(11);
+        subTree.addNode(3);
+        subTree.addNode(16);
 
-        bst.addSubtree(subTree.getRoot());
+        bst.addSubtree(bst.getRoot(),subTree.getRoot());
         System.out.println("After Binary Search Tree (In-Order):");
-        bst.displayInOrder();
+        bst.displayInOrder(bst.getRoot());
         System.out.println();
-        System.out.println("Height of Tree: " + bst.height());
-        System.out.println("Size of Tree: " + bst.size());
+        System.out.println("Height of Tree: " + bst.height(bst.getRoot()));
+        System.out.println("Size of Tree: " + bst.size(bst.getRoot()));
+
+        boolean found = bst.search(bst.getRoot(), 40);
+        if (found) {
+            System.out.println("Key 40 is present in the BST.");
+        } else {
+            System.out.println("Key 40 is not present in the BST.");
+        }
 
 }
 }
